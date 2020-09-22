@@ -1,4 +1,5 @@
-from .shape import Shape 
+from .shape import Shape
+from .point import Point
 
 class Polyline(Shape):
     def __init__(self):
@@ -19,6 +20,9 @@ class Polyline(Shape):
         ]
 
         return " ".join(lines)
+
+    def append(self, x, y):
+        self.points.append(Point(x, y))
 
 
 __all__ = ["Polyline"]

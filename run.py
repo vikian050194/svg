@@ -34,17 +34,17 @@ def main():
     pl = Polyline()
     pl.stroke = get_random_color()
     pl.stroke_width = 5
-    pl.points.append(Point(50, 50))
-    pl.points.append(Point(100, 50))
-    pl.points.append(Point(100, 100))
+    pl.append(50, 50)
+    pl.append(100, 50)
+    pl.append(100, 100)
     svg.add(pl)
 
     pg = Polygon()
     pg.stroke = get_random_color()
     pg.stroke_width = 5
-    pg.points.append(Point(150, 150))
-    pg.points.append(Point(150, 200))
-    pg.points.append(Point(200, 200))
+    pg.append(150, 150)
+    pg.append(150, 200)
+    pg.append(200, 200)
     svg.add(pg)
 
     color = get_random_color()
