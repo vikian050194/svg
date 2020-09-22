@@ -7,8 +7,8 @@ class SVG(Node):
         self.height = height
         self.shapes = []
 
-    def add(self, line):
-        self.shapes.append(line)
+    def append(self, shape):
+        self.shapes.append(shape)
 
     def __str__(self):
         return self.__repr__()
