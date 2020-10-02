@@ -2,15 +2,8 @@ from enum import Enum
 
 
 class Color(Enum):
-    COLORA = "#0085c3"
-    COLORB = "#7ab800"
-    COLORC = "#f2af00"
-    COLORD = "#dc5034"
-    COLORE = "#ce1126"
-    COLORF = "#b7295a"
-    COLORG = "#6e2585"
-    COLORH = "#71c6c1"
-    COLORI = "#5482ab"
-    COLORJ = "#009bbb"
-    COLORK = "#444444"
-    COLORL = "#eeeeee"
+    POLAROID_BLUE = "#00a3e2"
+    POLAROID_GREEN = "#1ba548"
+    POLAROID_YELLOW = "#fdc800"
+    POLAROID_ORANGE = "#f1860e"
+    POLAROID_RED = "#e41b13"

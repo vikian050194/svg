@@ -6,6 +6,12 @@ class Command(Node):
         super().__init__(None)
         self.relative = True
 
+    def __str__(self):
+        return self.__repr__()
+
+    def __repr__(self):
+        return self.name if self.relative else self.name.upper()
+
 
 class MoveTo(Command):
     def __init__(self, x, y):
@@ -14,21 +20,20 @@ class MoveTo(Command):
         self.x = x
         self.y = y
 
-    def __str__(self):
-        return self.__repr__()
-
     def __repr__(self):
         return f"{self.name} {self.x} {self.y}"
+
+
+class LineTo(MoveTo):
+    def __init__(self, x, y):
+        super().__init__(x, y)
+        self.name = "l"
 
 
 class CommandLine(Command):
     def __init__(self, value):
         super().__init__()
-        self.points = []
         self.value = value
-
-    def __str__(self):
-        return self.__repr__()
 
     def __repr__(self):
         return f"{self.name} {self.value}"
@@ -44,6 +49,12 @@ class VerticalLine(CommandLine):
     def __init__(self, value):
         super().__init__(value)
         self.name = "v"
+
+
+class ClosePath(Command):
+    def __init__(self):
+        super().__init__()
+        self.name = "z"
 
 
 class Path(Shape):
@@ -67,4 +78,4 @@ class Path(Shape):
         return " ".join(lines)
         
 
-__all__ = ["Path", "MoveTo", "HorizontalLine", "VerticalLine"]
+# __all__ = ["Path"]

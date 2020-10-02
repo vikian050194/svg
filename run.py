@@ -17,22 +17,22 @@ def main():
     svg = SVG(width, height)
     
     l = Line(0, 0, dx, dy)
-    l.stroke = get_random_color()
+    l.stroke = get_color()
     l.stroke_width = 5
     svg.append(l)
     
     l = Line(dx, dy, width, height)
-    l.stroke = get_random_color()
+    l.stroke = get_color()
     l.stroke_width = 5
     svg.append(l)
 
     c = Circle(dx, dy, 64)
     c.stroke_width = 0
-    c.fill = get_random_color()
+    c.fill = get_color()
     svg.append(c)
 
     pl = Polyline()
-    pl.stroke = get_random_color()
+    pl.stroke = get_color()
     pl.stroke_width = 5
     pl.append(50, 50)
     pl.append(100, 50)
@@ -40,14 +40,14 @@ def main():
     svg.append(pl)
 
     pg = Polygon()
-    pg.stroke = get_random_color()
+    pg.stroke = get_color()
     pg.stroke_width = 5
     pg.append(150, 150)
     pg.append(150, 200)
     pg.append(200, 200)
     svg.append(pg)
 
-    color = get_random_color()
+    color = get_color()
     f = lambda x: 0.02*(x**3)
     for x in range(-dx, dx, 1):
         y = round(dy-round(f(x),2),2)
@@ -58,17 +58,21 @@ def main():
             svg.append(c)
 
     p = Path()
-    p.stroke = get_random_color()
+    p.stroke = get_color()
     p.stroke_width = 5
 
     move = MoveTo(dx, dy)
     move.name = "M"
     p.d.append(move)
 
-    p.d.append(HorizontalLine(100))
-    p.d.append(VerticalLine(100))
-    p.d.append(HorizontalLine(-100))
-    p.d.append(VerticalLine(-100))
+    # p.d.append(HorizontalLine(100))
+    # p.d.append(VerticalLine(100))
+    # p.d.append(HorizontalLine(-100))
+    # p.d.append(VerticalLine(-100))
+    p.d.append(MoveTo(100, 100))
+    p.d.append(LineTo(300, 250))
+    p.d.append(LineTo(150, 100))
+    p.d.append(ClosePath())
 
     svg.append(p)
 
