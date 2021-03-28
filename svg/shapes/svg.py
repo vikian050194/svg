@@ -1,11 +1,14 @@
 from .node import Node
+from .rectangle import Rectangle
 
 class SVG(Node):
     def __init__(self, width, height):
         super().__init__("svg")
         self.width = width
         self.height = height
-        self.shapes = []
+        background = Rectangle(0, 0, "100%", "100%")
+        background.fill = "white"
+        self.shapes = [background]
 
     def append(self, shape):
         self.shapes.append(shape)
