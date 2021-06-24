@@ -1,5 +1,6 @@
 from .shape import Shape
 
+
 class Circle(Shape):
     def __init__(self, cx, cy, r=1):
         super().__init__("circle")

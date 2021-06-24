@@ -1,5 +1,6 @@
 from .polyline import Polyline
 
+
 class Polygon(Polyline):
     def __init__(self):
         super().__init__()

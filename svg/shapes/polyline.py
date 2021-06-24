@@ -1,6 +1,7 @@
 from .shape import Shape
 from .point import Point
 
+
 class Polyline(Shape):
     def __init__(self):
         super().__init__("polyline")

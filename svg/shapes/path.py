@@ -1,6 +1,7 @@
 from .shape import Shape
 from .node import *
 
+
 class Command(Node):
     def __init__(self):
         super().__init__(None)
@@ -57,6 +58,12 @@ class ClosePath(Command):
         self.name = "z"
 
 
+class CubicBezierCurve(Command):
+    def __init__(self):
+        super().__init__()
+        self.name = "c"
+
+
 class Path(Shape):
     def __init__(self):
         super().__init__("path")
@@ -76,6 +83,9 @@ class Path(Shape):
         ]
 
         return " ".join(lines)
-        
+
+    def append(self, command: Command):
+        self.d.append(command)
+
 
 # __all__ = ["Path"]

@@ -1,5 +1,6 @@
 from .shape import Shape
 
+
 class Ellipse(Shape):
     def __init__(self, cx, cy, rx=1, ry=1):
         super().__init__("ellipse")

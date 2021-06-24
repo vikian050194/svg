@@ -1,6 +1,7 @@
 from .node import Node
 from .rectangle import Rectangle
 
+
 class SVG(Node):
     def __init__(self, width, height):
         super().__init__("svg")

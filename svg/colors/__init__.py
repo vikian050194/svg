@@ -8,3 +8,5 @@ from .ikea import Ikea
 from .microsoft import Microsoft
 from .polaroid import Polaroid
 from .youtube import YouTube
+
+from .sets import Set1, Set2
