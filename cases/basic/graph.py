@@ -1,6 +1,6 @@
 from svg.shapes import Circle, Line
 
-from .common import *
+from ..common import *
 
 def graph():
     circles = []
@@ -32,3 +32,6 @@ def graph():
         lines.append(l)
 
     return circles + lines
+
+
+__all__ = ["graph"]

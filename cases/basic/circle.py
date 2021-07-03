@@ -1,6 +1,6 @@
 from svg.shapes import Circle
 
-from .common import *
+from ..common import *
 
 def circle():
     shapes = []
@@ -18,3 +18,6 @@ def circle():
         shapes.append(c)
 
     return shapes
+
+
+__all__ = ["circle"]

@@ -1,6 +1,6 @@
 from svg.shapes import Polygon
 
-from .common import *
+from ..common import *
 
 def triangle():
     shapes = []
@@ -17,7 +17,10 @@ def triangle():
         pg.stroke_width = 5
         pg.fill = fc
         for j in range(0, k):
-            pg.append(rw(), rh())
+            pg.append(r_x(), r_y())
         shapes.append(pg)
 
     return shapes
+
+
+__all__ = ["triangle"]
