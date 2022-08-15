@@ -1,9 +1,12 @@
-from enum import Enum
+from .base import Base
 
 
-class Polaroid(str, Enum):
-    BLUE = "#00a3e2"
-    GREEN = "#1ba548"
-    YELLOW = "#fdc800"
-    ORANGE = "#f1860e"
-    RED = "#e41b13"
+class Polaroid(Base):
+    BLUE = "#00A3E2"
+    GREEN = "#1BA548"
+    YELLOW = "#FDC800"
+    ORANGE = "#F1860E"
+    RED = "#E41B13"
+
+
+__all__ = ["Polaroid"]

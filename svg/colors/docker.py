@@ -1,6 +1,9 @@
-from enum import Enum
+from .base import Base
 
 
-class Docker(str, Enum):
-    COLOR_A = "#0db7ed"
-    COLOR_B = "#384d54"
+class Docker(Base):
+    COLOR_A = "#0DB7ED"
+    COLOR_B = "#384D54"
+
+
+__all__ = ["Docker"]

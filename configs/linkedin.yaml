@@ -1,0 +1,13 @@
+version: 0.2.0
+name: linkedin
+width: 1584
+height: 396
+palette: violet
+order: random
+patterns:
+  - name: background
+    color: white
+
+  - name: circle
+    count: 50
+    radius: 32

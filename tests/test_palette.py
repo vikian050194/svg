@@ -1,10 +1,10 @@
 from enum import Enum
 from unittest import TestCase
 
-from svg.colors import Palette
+from svg.colors import Palette, Base
 
 
-class TestColors(str, Enum):
+class TestColors(Base):
     COLOR_A = "color_a"
     COLOR_B = "color_b"
     COLOR_C = "color_c"

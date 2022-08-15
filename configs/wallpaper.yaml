@@ -1,0 +1,17 @@
+version: 0.2.0
+name: wallpaper
+width: 1920
+height: 1080
+palette: dell
+order: random
+patterns:
+  - name: background
+    color: black
+
+  - name: circle
+    count: 50
+    radius: 32
+    
+  - name: triangle
+    count: 5
+    edge: 3

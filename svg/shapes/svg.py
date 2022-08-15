@@ -7,9 +7,7 @@ class SVG(Node):
         super().__init__("svg")
         self.width = width
         self.height = height
-        background = Rectangle(0, 0, "100%", "100%")
-        background.fill = "white"
-        self.shapes = [background]
+        self.shapes = []
 
     def append(self, shape):
         self.shapes.append(shape)
@@ -18,16 +16,14 @@ class SVG(Node):
         return self.__repr__()
 
     def __repr__(self):
-        lines = [
-            f'<{self.name} version="1.1" xmlns="http://www.w3.org/2000/svg"',
-            f'width="{self.width}"',
-            f'height="{self.height}"',
-            f'viewBox="0 0 {self.width} {self.height}">',
-            f'{"".join(map(str,self.shapes))}',
+        return (
+            f'<{self.name} version="1.1" xmlns="http://www.w3.org/2000/svg" '
+            f'width="{self.width}" '
+            f'height="{self.height}" '
+            f'viewBox="0 0 {self.width} {self.height}"> '
+            f'{"".join(map(str,self.shapes))}'
             f'</{self.name}>'
-        ]
-
-        return " ".join(lines)
+        )
 
 
 __all__ = ["SVG"]

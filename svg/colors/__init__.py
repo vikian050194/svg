@@ -1,12 +1,13 @@
-from .palette import Palette
+from .base import *
 
-from .dell import Dell
-from .docker import Docker
-from .google import Google
-from .gravit import Gravit
-from .ikea import Ikea
-from .microsoft import Microsoft
-from .polaroid import Polaroid
-from .youtube import YouTube
+from .dell import *
+from .docker import *
+from .google import *
+from .gravit import *
+from .ikea import *
+from .linkedin import *
+from .microsoft import *
+from .polaroid import *
+from .youtube import *
 
-from .sets import Set1, Set2
+from .experiment import * 
