@@ -1,21 +1,23 @@
-version: 0.2.0
 name: example
-width: 512
-height: 512
-palette: dell
-order: random
+width: 1024
+height: 1024
+palette: blue
+order: forward
 patterns:
   - name: background
-    color: black
+    color: white
 
   - name: grid
     count: 2
 
   - name: circle
-    count: 5
+    count: 1
     radius: 32
-    
+
   - name: triangle
-    count: 5
-    edge: 3
-    
+    type: random
+    count: 1
+
+  - name: triangle
+    type: equilateral
+    count: 1
