@@ -5,6 +5,7 @@ from enum import Enum
 
 from svg.shapes import Polygon, Shape
 from svg.cases.abstract import AbstractCase
+from svg.math import quadratic_equation
 
 
 class Type(str, Enum):
@@ -44,17 +45,15 @@ class TriangleCase(AbstractCase):
                     a = 1 + la**2
                     b = 2*la*(lb-ya)-2*xa
                     c = xa**2+(lb-ya)**2-r2
-                    d2 = b**2-4*a*c
-                    d = math.sqrt(d2) 
+                    
+                    xcs = quadratic_equation.solve(a, b, c)
 
-                    xc_1 = ((-1)*b+d)/(2*a)
-                    xc_2 = ((-1)*b-d)/(2*a)
+                    x = xcs[self.rm.next(0, 1)]
 
-                    yc_1 = la*xc_1+lb
-                    yc_2 = la*xc_2+lb
+                    y = la*x+lb
 
-                    xc = round(xc_1, 2)
-                    yc = round(yc_1, 2)
+                    xc = round(x, 2)
+                    yc = round(y, 2)
 
                     pg.append(xa, ya)
                     pg.append(xb, yb)

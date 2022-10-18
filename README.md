@@ -3,36 +3,26 @@
 [![MIT license][license-badge]][license-url]
 [![Maintenance status][status-badge]][status-url]
 
-## Generate and update wallpaper on startup
+## Documentation
 
-```bash
-touch /etc/systemd/user/wallpaper.service 
-```
-
-Example of service file content
+Preparation
 
 ```
-[Unit]
-Description=Generate and update wallpaper
-
-[Service]
-Type=oneshot
-ExecStart=/home/kirill/git/svg/wallpaper.py
-
-[Install]
-WantedBy=multi-user.target
+virtualenv venv
+source venv/bin/activate
+pip install -r reqirements.txt
 ```
 
-Try to start service
+Live
 
 ```
-systemctl --user start wallpaper.service
+mkdocs serve
 ```
 
-If everything is fine then enable it
+Build
 
 ```
-systemctl --user enable wallpaper.service
+mkdocs build
 ```
 
 [status-url]: https://github.com/vikian050194/svg/pulse

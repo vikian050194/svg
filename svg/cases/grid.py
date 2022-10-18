@@ -12,8 +12,10 @@ class GridCase(AbstractCase):
     def draw(self, count: int) -> List[Shape]:
         shapes = []
 
-        dx = self.width // count
-        dy = self.height // count
+        parts_count = count + 1
+
+        dx = self.width // parts_count
+        dy = self.height // parts_count
         cc = self.palette.get_color()
 
         l = Line(dx, 0, dx, self.height)

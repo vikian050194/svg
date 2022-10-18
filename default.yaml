@@ -1,3 +1,8 @@
+name: example
+width: 1024
+height: 1024
+palette: linkedine
+order: forward
 patterns:
   - name: background
     color: white
