@@ -2,6 +2,44 @@
 
 [![MIT license][license-badge]][license-url]
 [![Maintenance status][status-badge]][status-url]
+[![Code coverage][coverage-badge]][coverage-url]
+
+## About
+
+**svg** is a python module and CLI application that will generate SVG based on yaml configuration file.
+
+## Motivation
+
+Once I found nice image for wallpaper with graph. In fact two graphs or even four. Because one is pink and one is blue.
+
+I would like to have different graph each time operating system is loaded.
+
+That is why I started this project that became much more flexible that I expected.
+
+## Requirements
+
+Python version 3.8 or higher
+
+Developed and tested on Ubuntu 20.04
+
+## Installation
+
+No installation is needed.
+
+1. Clone the repo
+    ```
+    git clone https://github.com/vikian050194/svg.git
+    ```
+2. Call package
+    ```
+    python3 app.py config.yaml
+    ```
+
+## Usage
+
+**svg** needs yaml configuration file as a single argument.
+
+Read the documentation to know how to generate wallpaper on system load.
 
 ## Documentation
 
@@ -10,7 +48,7 @@ Preparation
 ```
 virtualenv venv
 source venv/bin/activate
-pip install -r reqirements.txt
+pip install -r reqirements/docs.txt
 ```
 
 Live
@@ -25,8 +63,31 @@ Build
 mkdocs build
 ```
 
+## Tests
+
+TDD is cool and I use it here!
+
+Module for testing is `unittest`
+
+```
+python3 -m unittest discover -t=. -s=tests/ -p=test_*.py
+```
+
+### Coverage
+
+To make HTML coverage report run following commands
+
+```
+pip install -r reqirements/tests.txt
+coverage run -m unittest
+coverage html
+```
+
 [status-url]: https://github.com/vikian050194/svg/pulse
 [status-badge]: https://img.shields.io/github/last-commit/vikian050194/svg.svg
 
 [license-url]: https://github.com/vikian050194/svg/blob/master/LICENSE
 [license-badge]: https://img.shields.io/github/license/vikian050194/svg.svg
+
+[coverage-url]: https://codecov.io/gh/vikian050194/svg
+[coverage-badge]: https://img.shields.io/codecov/c/github/vikian050194/svg

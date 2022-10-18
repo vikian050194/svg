@@ -1,7 +1,9 @@
 from enum import Enum
 from unittest import TestCase
 
-from svg.colors import Palette, Base
+from svg.colors import Base
+from svg.palette import Order
+from svg import Palette
 
 
 class TestColors(Base):
@@ -11,10 +13,10 @@ class TestColors(Base):
 
 
 class TestPalette(TestCase):
-    def test_get_next_color(self):
-        palette = Palette(TestColors)
+    def test_get_color_forward(self):
+        palette = Palette(TestColors, Order.FORWARD)
 
-        self.assertEqual(palette.get_next_color(), "color_a")
-        self.assertEqual(palette.get_next_color(), "color_b")
-        self.assertEqual(palette.get_next_color(), "color_c")
-        self.assertEqual(palette.get_next_color(), "color_a")
+        self.assertEqual(palette.get_color(), "color_a")
+        self.assertEqual(palette.get_color(), "color_b")
+        self.assertEqual(palette.get_color(), "color_c")
+        self.assertEqual(palette.get_color(), "color_a")

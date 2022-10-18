@@ -19,6 +19,10 @@ class AbstractRandomManager(abc.ABC):
     def get_pair(self) -> Tuple[int, int]:
         raise NotImplementedError()
 
+    @abc.abstractmethod
+    def get_bool(self) -> bool:
+        raise NotImplementedError()
+
 
 class RandomManager(AbstractRandomManager):
     def __init__(self, next, max_x: int, max_y: int):
@@ -37,6 +41,9 @@ class RandomManager(AbstractRandomManager):
 
     def get_pair(self) -> Tuple[int, int]:
         return self.next(0, self.max_x), self.next(0, self.max_y)
+
+    def get_bool(self) -> bool:
+        return self.next(0, 1) == 0
 
 
 __all__ = ["RandomManager"]
