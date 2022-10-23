@@ -13,3 +13,4 @@ patterns:
     
   - name: triangle
     count: 5
+    type: random

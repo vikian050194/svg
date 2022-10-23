@@ -1,8 +1,8 @@
-name: linkedin
+name: linkedin-circle
 width: 1584
 height: 396
-palette: violet
-order: straight
+palette: blue
+order: forward
 patterns:
   - name: background
     color: white

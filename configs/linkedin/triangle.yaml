@@ -1,0 +1,23 @@
+name: linkedin-triangle
+width: 1584
+height: 396
+palette: blue
+order: forward
+patterns:
+  - name: background
+    color: white
+
+  - name: triangle
+    type: equilateral
+    count: 16
+    radius: 64
+
+  - name: triangle
+    type: equilateral
+    count: 32
+    radius: 32
+
+  - name: triangle
+    type: equilateral
+    count: 64
+    radius: 16
