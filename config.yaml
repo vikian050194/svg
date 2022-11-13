@@ -1,3 +1,5 @@
+palette: green
+order: backward
 patterns:
   - name: background
     color: white
@@ -16,3 +18,4 @@ patterns:
   - name: triangle
     type: equilateral
     count: 1
+    radius: 128

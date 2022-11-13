@@ -1,11 +1,11 @@
-from typing import List
+from typing import List, Optional
 
 import math
 from enum import Enum
 
 from svg.shapes import Polygon, Shape
 from svg.cases.abstract import AbstractCase
-from svg.math import quadratic_equation
+from svg.math import circles_intersection, quadratic_equation
 
 
 class Type(str, Enum):
@@ -18,7 +18,7 @@ class TriangleCase(AbstractCase):
     def name(self) -> str:
         return "triangle"
 
-    def draw(self, count: int, type: Type) -> List[Shape]:
+    def draw(self, count: int, type: Type, radius: Optional[int] = None) -> List[Shape]:
             edge = 3
             shapes = []
     
@@ -35,29 +35,57 @@ class TriangleCase(AbstractCase):
                         x, y = self.rm.get_pair()
                         pg.append(x, y)
                 if type == Type.EQUILATERAL:
-                    xa, ya = self.rm.get_pair()
-                    xb, yb = self.rm.get_pair()
-                    r2 = ((xa-xb)**2)+((ya-yb)**2)
-                    r = math.sqrt(r2)
+                    if radius is None:
+                        xa, ya = self.rm.get_pair()
+                        xb, yb = self.rm.get_pair()
+                        r2 = ((xa-xb)**2)+((ya-yb)**2)
+                        r = math.sqrt(r2)
 
-                    la = (xb-xa)/(ya-yb)
-                    lb = (xa**2+ya**2-xb**2-yb**2)/(2*(ya-yb))
-                    a = 1 + la**2
-                    b = 2*la*(lb-ya)-2*xa
-                    c = xa**2+(lb-ya)**2-r2
-                    
-                    xcs = quadratic_equation.solve(a, b, c)
+                        la = (xb-xa)/(ya-yb)
+                        lb = (xa**2+ya**2-xb**2-yb**2)/(2*(ya-yb))
+                        a = 1 + la**2
+                        b = 2*la*(lb-ya)-2*xa
+                        c = xa**2+(lb-ya)**2-r2
+                        
+                        xcs = quadratic_equation.solve(a, b, c)
 
-                    x = xcs[self.rm.next(0, 1)]
+                        x = xcs[self.rm.next(0, 1)]
 
-                    y = la*x+lb
+                        y = la*x+lb
 
-                    xc = round(x, 2)
-                    yc = round(y, 2)
+                        xc = round(x, 2)
+                        yc = round(y, 2)
 
-                    pg.append(xa, ya)
-                    pg.append(xb, yb)
-                    pg.append(xc, yc)
+                        pg.append(xa, ya)
+                        pg.append(xb, yb)
+                        pg.append(xc, yc)
+                    else:
+                        xo, yo = self.rm.get_pair()
+                        ro = radius
+                        ro2 = ro**2
+
+                        xa = self.rm.next(xo-ro, xo+ro)
+                        a = 1
+                        b = (-2)*yo
+                        c = (xa-xo)**2+(yo**2)-ro2
+                        yas = quadratic_equation.solve(a, b, c)
+                        ya = yas[self.rm.next(0, len(yas)-1)]
+                        ra2 = (ro**2)*3
+
+                        [(xb, yb), (xc, yc)] = circles_intersection.solve((xo, yo, ro2), (xa, ya, ra2))
+
+                        xa = round(xa, 2)
+                        ya = round(ya, 2)
+
+                        xb = round(xb, 2)
+                        yb = round(yb, 2)
+
+                        xc = round(xc, 2)
+                        yc = round(yc, 2)
+
+                        pg.append(xa, ya)
+                        pg.append(xb, yb)
+                        pg.append(xc, yc)
 
                 shapes.append(pg)
 
