@@ -42,7 +42,7 @@ class Orange(Base):
     COLOR_B = "#F8CD94"
     COLOR_C = "#F7B26A"
     COLOR_D = "#F59640"
-    COLOR_E = "#EC4339"
+    COLOR_E = "#F47B16"
     COLOR_F = "#EC640C"
     COLOR_G = "#CD5308"
     COLOR_H = "#AF4104"
