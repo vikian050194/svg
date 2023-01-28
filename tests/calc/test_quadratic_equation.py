@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from svg.math.quadratic_equation import solve
+from svg.calc import quadratic_equation
 
 
 class TestQuadraticEquation(TestCase):
@@ -10,7 +10,7 @@ class TestQuadraticEquation(TestCase):
         c = 3
         expected = []
 
-        actual = solve(a, b, c)
+        actual = quadratic_equation(a, b, c)
 
         self.assertEqual(actual, expected)
 
@@ -20,7 +20,7 @@ class TestQuadraticEquation(TestCase):
         c = 1
         expected = [-1.]
 
-        actual = solve(a, b, c)
+        actual = quadratic_equation(a, b, c)
 
         self.assertEqual(actual, expected)
 
@@ -30,6 +30,6 @@ class TestQuadraticEquation(TestCase):
         c = 1
         expected = [-0.2, -1.]
 
-        actual = solve(a, b, c)
+        actual = quadratic_equation(a, b, c)
 
         self.assertEqual(actual, expected)

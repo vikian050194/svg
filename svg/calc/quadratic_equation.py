@@ -2,7 +2,8 @@ from typing import List
 
 import math
 
-def solve(a: int, b: int, c: int) -> List[int]:
+
+def quadratic_equation(a: int, b: int, c: int) -> List[int]:
     d2 = b**2-4*a*c
 
     if d2 < 0:
@@ -17,3 +18,6 @@ def solve(a: int, b: int, c: int) -> List[int]:
         return [xc_1]
     else:
         return [xc_1, xc_2]
+
+
+__all__ = ["quadratic_equation"]

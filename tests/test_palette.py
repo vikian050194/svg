@@ -1,4 +1,3 @@
-from enum import Enum
 from unittest import TestCase
 
 from svg.colors import Base

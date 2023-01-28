@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from svg.math.circles_intersection import solve
+from svg.calc import circles_intersection
 
 
 class TestCirclesIntersection(TestCase):
@@ -9,7 +9,7 @@ class TestCirclesIntersection(TestCase):
         b = (xa, ya, ra) = (2, 2, 16)
         expected = []
 
-        actual = solve(a, b)
+        actual = circles_intersection(a, b)
 
         self.assertEqual(actual, expected)
 
@@ -18,7 +18,7 @@ class TestCirclesIntersection(TestCase):
         b = (xa, ya, ra) = (3, 3, 1)
         expected = [(4.0, 3.0)]
 
-        actual = solve(a, b)
+        actual = circles_intersection(a, b)
 
         self.assertEqual(actual, expected)
 
@@ -27,7 +27,7 @@ class TestCirclesIntersection(TestCase):
         b = (xa, ya, ra) = (2, 3, 2)
         expected = [(3.0, 2.0), (1.0, 2.0)]
 
-        actual = solve(a, b)
+        actual = circles_intersection(a, b)
 
         self.assertEqual(actual, expected)
 
@@ -36,7 +36,7 @@ class TestCirclesIntersection(TestCase):
         b = (xa, ya, ra) = (3, 3, 2)
         expected = [(2.0, 4.0), (2.0, 2.0)]
 
-        actual = solve(a, b)
+        actual = circles_intersection(a, b)
 
         self.assertEqual(actual, expected)
 
@@ -45,6 +45,6 @@ class TestCirclesIntersection(TestCase):
         b = (xa, ya, ra) = (1, 2, 2)
         expected = [(0.8, 0.6), (0.0, 1.0)]
 
-        actual = solve(a, b)
+        actual = circles_intersection(a, b)
 
         self.assertEqual(actual, expected)

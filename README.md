@@ -24,15 +24,21 @@ Developed and tested on Ubuntu 20.04
 
 ## Installation
 
-No installation is needed.
-
 1. Clone the repo
     ```
     git clone https://github.com/vikian050194/svg.git
     ```
-2. Call package
+2. Install the package globally
     ```
-    python3 app.py config.yaml
+    pip3 install .
+    ```
+3. Call installed package via a generated standalone "shim" script
+    ```
+    svg config.yaml
+    ```
+    or run Python module
+    ```
+    python3 svg config.yaml
     ```
 
 ## Usage
@@ -40,6 +46,20 @@ No installation is needed.
 **svg** needs yaml configuration file as a single argument.
 
 Read the documentation to know how to generate wallpaper on system load.
+
+### Automation
+
+To install service and timer
+
+```
+bash automation/setup.sh
+```
+
+To remove it all
+
+```
+bash automation/clean.sh
+```
 
 ## Documentation
 

@@ -25,7 +25,7 @@ def readme():
 
 attrs = dict(
     name="svg",
-    version="0.5.0",
+    version="0.6.0",
     description="SVG",
     long_description=readme(),
     classifiers=[
@@ -47,7 +47,7 @@ attrs = dict(
         "install": PostInstallCommand,
     },
     entry_points = {
-        "console_scripts": ["svg=svg.command_line:main"],
+        "console_scripts": ["svg=svg.app:run"],
     },
     include_package_data=True,
     zip_safe=False

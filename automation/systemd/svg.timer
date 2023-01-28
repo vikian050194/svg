@@ -1,0 +1,11 @@
+[Unit]
+Description=Update wallpaper from time to time
+
+[Timer]
+OnCalendar=hourly
+Persistent=true
+AccuracySec=10m
+Unit=svg.service
+
+[Install]
+WantedBy=timers.target

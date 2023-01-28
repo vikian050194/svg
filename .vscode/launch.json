@@ -5,11 +5,15 @@
             "name": "Python: Generate",
             "type": "python",
             "request": "launch",
-            "program": "app.py",
+            "program": "svg/app.py",
             "console": "integratedTerminal",
+            "justMyCode": false,
             "args": [
                 "${relativeFile}"
-            ]
+            ],
+            "env": {
+                "SVG_HOME": "${workspaceFolder}"
+            }
         },
         {
             "name": "Python: Module",
@@ -31,7 +35,7 @@
             "name": "Python: Run App",
             "type": "python",
             "request": "launch",
-            "program": "app.py",
+            "program": "svg/app.py",
             "console": "integratedTerminal",
             "args": [
             ],

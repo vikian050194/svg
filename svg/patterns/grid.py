@@ -1,10 +1,10 @@
 from typing import List
 
 from svg.shapes import Line, Shape
-from svg.cases.abstract import AbstractCase
+from svg.patterns.abstract import AbstractPattern
 
 
-class GridCase(AbstractCase):
+class GridPattern(AbstractPattern):
     @property
     def name(self) -> str:
         return "grid"
@@ -31,4 +31,4 @@ class GridCase(AbstractCase):
         return shapes
 
 
-__all__ = ["GridCase"]
+__all__ = ["GridPattern"]

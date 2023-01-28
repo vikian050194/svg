@@ -1,6 +1,6 @@
 from random import randint
 
-from svg.cases import *
+from svg.patterns import *
 from svg.configuration import Configuration
 from svg.get_color import get_colors
 from svg.palette import Palette
@@ -15,18 +15,15 @@ def main(config: Configuration):
 
     rm = RandomManager(randint, config.width, config.height)
     tm = TimeManager()
-    fom = FileOutputManager(tm, config)
-    tom = TerminalOutputManager(config)
 
     cases = [
-        BackgroundCase,
-        GridCase,
-        CircleCase,
-        TriangleCase,
-        GraphCase,
-        SerpCase,
+        BackgroundPattern,
+        GridPattern,
+        CirclePattern,
+        TrianglePattern,
+        GraphPattern,
+        SerpPattern,
     ]
-
 
     cc = {}
     for c in cases:
@@ -44,5 +41,11 @@ def main(config: Configuration):
             svg.append(shape)
 
     output = str(svg)
-    tom.save(output)
-    fom.save(output)
+
+    if config.write:
+        fom = FileOutputManager(tm, config)
+        fom.save(output)
+
+    if config.print:
+        tom = TerminalOutputManager(config)
+        tom.save(output)

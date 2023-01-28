@@ -1,10 +1,10 @@
 from typing import List
 
 from svg.shapes import Line, Shape
-from svg.cases.abstract import AbstractCase
+from svg.patterns.abstract import AbstractPattern
 
 
-class SerpCase(AbstractCase):
+class SerpPattern(AbstractPattern):
     @property
     def name(self) -> str:
         return "serp"
@@ -52,4 +52,4 @@ class SerpCase(AbstractCase):
             self._recF(e, nextxb, nextyb, prevXB, prevYB, nextxc, nextyc, i - 1);
 
 
-__all__ = ["SerpCase"]
+__all__ = ["SerpPattern"]

@@ -1,10 +1,10 @@
 from typing import List
 
 from svg.shapes import Rectangle, Shape
-from svg.cases.abstract import AbstractCase
+from svg.patterns.abstract import AbstractPattern
 
 
-class BackgroundCase(AbstractCase):
+class BackgroundPattern(AbstractPattern):
     @property
     def name(self) -> str:
         return "background"
@@ -19,4 +19,4 @@ class BackgroundCase(AbstractCase):
         return shapes
 
 
-__all__ = ["BackgroundCase"]
+__all__ = ["BackgroundPattern"]

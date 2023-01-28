@@ -1,0 +1,20 @@
+name: wallpaper
+width: 1920
+height: 1080
+palette: linkedine
+order: random
+patterns:
+  - name: background
+    color: white
+
+  - name: circle
+    count: 16
+    radius: 64
+
+  - name: circle
+    count: 32
+    radius: 32
+
+  - name: circle
+    count: 64
+    radius: 16

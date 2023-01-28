@@ -1,0 +1,10 @@
+[Unit]
+Description=Update wallpaper
+
+[Service]
+User=kirill
+Type=simple
+ExecStart=/usr/bin/python3 -m svg configs/wallpaper/circle.yaml
+
+[Install]
+WantedBy=multi-user.target

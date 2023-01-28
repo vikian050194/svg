@@ -1,6 +1,5 @@
 import os
 import abc
-from datetime import datetime
 
 from .time_manager import AbstractTimeManager
 from ..configuration import Configuration
@@ -17,18 +16,15 @@ class FileOutputManager(AbstractOutputManager):
         self.tm = tm
         self.configuration = configuration
 
-        self.folder = "output"
-        # wd = "/home/kirill/git/personal/svg/"
-        # folder = wd + folder
+        directory = configuration.home + "/history"
 
-        if not os.path.exists(self.folder):
-            os.makedirs(self.folder)
-
+        if not os.path.exists(directory):
+            os.makedirs(directory)
 
     def save(self, output):
-        with open("output.svg", "w") as out_file:
+        with open(self.configuration.home + "/latest.svg", "w") as out_file:
             out_file.write(output)
-        with open(self.folder + "/" + self.tm.get_datetime().isoformat(sep="T", timespec="seconds") + ".svg", "w") as out_file:
+        with open(self.configuration.home + "/history/" + self.tm.get_datetime().isoformat(sep="T", timespec="seconds") + ".svg", "w") as out_file:
             out_file.write(output)
 
 

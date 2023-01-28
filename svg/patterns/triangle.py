@@ -4,8 +4,8 @@ import math
 from enum import Enum
 
 from svg.shapes import Polygon, Shape
-from svg.cases.abstract import AbstractCase
-from svg.math import circles_intersection, quadratic_equation
+from svg.patterns.abstract import AbstractPattern
+from svg.calc import circles_intersection, quadratic_equation
 
 
 class Type(str, Enum):
@@ -13,7 +13,7 @@ class Type(str, Enum):
     EQUILATERAL = "equilateral"
 
 
-class TriangleCase(AbstractCase):
+class TrianglePattern(AbstractPattern):
     @property
     def name(self) -> str:
         return "triangle"
@@ -92,4 +92,4 @@ class TriangleCase(AbstractCase):
             return shapes
 
 
-__all__ = ["TriangleCase"]
+__all__ = ["TrianglePattern"]

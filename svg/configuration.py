@@ -9,6 +9,8 @@ class Configuration():
         self._palette = palette
         self._order = order
         self._patterns = patterns
+        self._print = False
+        self._write = True
 
     @property
     def home(self) -> str:
@@ -37,6 +39,14 @@ class Configuration():
     @property
     def patterns(self) -> str:
         return self._patterns
+
+    @property
+    def print(self) -> str:
+        return self._print
+
+    @property
+    def write(self) -> str:
+        return self._write
 
 
 __all__ = ["Configuration"]

@@ -1,31 +1,34 @@
-#!/usr/bin/env python3
-
 import yaml
 
 from sys import argv
-from os import environ
+from os import path, environ
 from pathlib import Path
+
 
 from svg import main
 from svg.configuration import Configuration
 
 
-if __name__ == "__main__":
-    home = Path.home().as_posix()
-    home = environ.get("SVG_HOME", home)
+def run():
+    home = environ.get("SVG_HOME", None)
 
-    default_config_file_name = "default.yaml"
+    if not home:
+        home = Path.home().as_posix()
+        home = path.join(home, "svg")
 
-    with open(default_config_file_name, "r") as stream:
+    configs = path.join(home, "configs")
+    path_to_default_config_file = path.join(configs, "default.yaml")
+
+    with open(path_to_default_config_file, "r") as stream:
         try:
             default_config_source = yaml.safe_load(stream)
         except yaml.YAMLError as exc:
             print(exc)
 
-    config_file_name = environ.get("SVG_CONFIG", "config.yaml")
-    config_file_name = argv[1] if len(argv) == 2 else config_file_name
+    config_file_name = argv[1]
+    path_to_config_file = path.join(home, config_file_name)
 
-    with open(config_file_name, "r") as stream:
+    with open(path_to_config_file, "r") as stream:
         try:
             config_source = yaml.safe_load(stream)
         except yaml.YAMLError as exc:
@@ -40,3 +43,7 @@ if __name__ == "__main__":
     config = Configuration(home, width, height, palette, order, patterns)
 
     main(config)
+
+
+if __name__ == '__main__':
+    run()

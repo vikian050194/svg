@@ -1,6 +1,7 @@
-from . import quadratic_equation
+from .quadratic_equation import *
 
-def solve(a, b):
+
+def circles_intersection(a, b):
     (xa, ya, ra2) = a
     (xb, yb, rb2) = b
 
@@ -9,7 +10,7 @@ def solve(a, b):
         a = 1
         b = (-2)*ya
         c = ya**2+(x-xa)**2-ra2
-        y = quadratic_equation.solve(a, b, c)
+        y = quadratic_equation(a, b, c)
 
         if len(y)==0:
             return []
@@ -28,7 +29,7 @@ def solve(a, b):
     b = 2*la*(lb-ya)-2*xa
     c = xa**2+(lb-ya)**2-ra2
     
-    x = quadratic_equation.solve(a, b, c)
+    x = quadratic_equation(a, b, c)
 
     if len(x)==0:
         return []
@@ -43,3 +44,6 @@ def solve(a, b):
     y2 = la*x2+lb
 
     return [(x1, y1), (x2, y2)]
+
+
+__all__ = ["circles_intersection"]

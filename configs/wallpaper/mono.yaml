@@ -1,0 +1,12 @@
+name: wallpaper
+width: 1920
+height: 1080
+palette: linkedine
+order: mono
+patterns:
+  - name: background
+    color: white
+
+  - name: circle
+    count: 8
+    radius: 32
