@@ -1,5 +1,6 @@
 from enum import Enum
-from random import randint
+
+from svg.managers.random_manager import AbstractRandomManager
 
 
 class Order(str, Enum):
@@ -11,13 +12,14 @@ class Order(str, Enum):
 
 
 class Palette():
-    def __init__(self, colors: Enum, order: Order):
+    def __init__(self, colors: Enum, order: Order, rm: AbstractRandomManager):
         self.colors = [c.value for c in colors]
         self.index = 0
         self.max_index = len(self.colors) - 1 
         self.order = order
+        self.rm = rm
         if order == Order.MONO:
-            self.index = randint(0, self.max_index)
+            self.index = self.rm.next(0, self.max_index)
 
     def _get_current_color(self):
         return self.colors[self.index]
@@ -33,7 +35,7 @@ class Palette():
         return value
 
     def _get_random_color(self):
-        index = randint(0, self.max_index)
+        index = self.rm.next(0, self.max_index)
         return self.colors[index]
 
     def get_color(self):

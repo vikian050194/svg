@@ -10,11 +10,11 @@ from svg.managers import *
 
 
 def main(config: Configuration):
-    palette_colors = get_colors(config.palette)
-    palette = Palette(palette_colors, config.order)
-
     rm = RandomManager(randint, config.width, config.height)
     tm = TimeManager()
+
+    palette_colors = get_colors(config.palette)
+    palette = Palette(palette_colors, config.order, rm)
 
     cases = [
         BackgroundPattern,
