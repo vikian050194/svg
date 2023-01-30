@@ -1,6 +1,5 @@
 class Point():
     def __init__(self, x, y):
-        self.points = []
         self.x = x
         self.y = y
 
