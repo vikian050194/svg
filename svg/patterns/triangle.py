@@ -18,6 +18,10 @@ class TrianglePattern(AbstractPattern):
     def name(self) -> str:
         return "triangle"
 
+    @property
+    def overridable(self) -> List[str]:
+        return ["fill", "stroke"]
+
     def draw(self, count: int, type: Type, radius: Optional[int] = None) -> List[Shape]:
             edge = 3
             shapes = []

@@ -7,11 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.7.0] - 2023-01-29
+## [0.7.0] - 2023-01-30
 
 ### Added
 
-- Specify stroke and fill colors for all patterns and for particular pattern
+- Specify stroke and fill colors of particular pattern
 
 ## [0.6.0] - 2023-01-28
 

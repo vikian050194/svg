@@ -5,8 +5,9 @@ palette: linkedine
 order: mono
 patterns:
   - name: background
-    color: white
+    color: bisque
 
   - name: circle
     count: 8
     radius: 32
+    stroke: black

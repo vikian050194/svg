@@ -9,6 +9,10 @@ class BackgroundPattern(AbstractPattern):
     def name(self) -> str:
         return "background"
 
+    @property
+    def overridable(self) -> List[str]:
+        return []
+
     def draw(self, color: str) -> List[Shape]:
         shapes = []
         

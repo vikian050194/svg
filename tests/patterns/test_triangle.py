@@ -4,6 +4,7 @@ from svg.patterns import TrianglePattern
 from svg.patterns.triangle import Type
 from svg.palette import Order, Palette
 from svg.shapes import Polygon, Point
+
 from tests.mocks import TestColors, TestRandomManager
 
 

@@ -1,6 +1,7 @@
 from random import randint
 
 from svg.patterns import *
+from svg.patterns.abstract import AbstractPattern
 from svg.configuration import Configuration
 from svg.get_color import get_colors
 from svg.palette import Palette
@@ -16,7 +17,7 @@ def main(config: Configuration):
     palette_colors = get_colors(config.palette)
     palette = Palette(palette_colors, config.order, rm)
 
-    cases = [
+    patterns = [
         BackgroundPattern,
         GridPattern,
         CirclePattern,
@@ -25,17 +26,28 @@ def main(config: Configuration):
         SerpPattern,
     ]
 
-    cc = {}
-    for c in cases:
-        ci = c(palette, config.width, config.height, rm)
-        cc[ci.name] = ci.draw
+    pp = {}
+    for p in patterns:
+        pi = p(palette, config.width, config.height, rm)
+        pp[pi.name] = pi
 
     svg = SVG(config.width, config.height)
 
     for pattern in config.patterns:
-        draw = cc[pattern["name"]]
+        pi: AbstractPattern = pp[pattern["name"]]
         del pattern["name"]
-        shapes = draw(**pattern)
+        override = {}
+
+        for key in pi.overridable:
+            if key in pattern:
+                override[key] = pattern[key]
+                del pattern[key]
+
+        shapes = pi.draw(**pattern)
+
+        for shape in shapes:
+            for key in override:
+                setattr(shape, key, override[key])
 
         for shape in shapes:
             svg.append(shape)

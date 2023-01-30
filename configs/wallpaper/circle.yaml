@@ -10,11 +10,14 @@ patterns:
   - name: circle
     count: 16
     radius: 64
+    fill: white
 
   - name: circle
     count: 32
     radius: 32
+    fill: white
 
   - name: circle
     count: 64
     radius: 16
+    fill: white

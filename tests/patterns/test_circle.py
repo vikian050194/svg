@@ -3,6 +3,7 @@ from unittest import TestCase
 from svg.patterns import CirclePattern
 from svg.palette import Order, Palette
 from svg.shapes import Circle
+
 from tests.mocks import TestColors, TestRandomManager
 
 
