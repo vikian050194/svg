@@ -18,6 +18,10 @@ class TrianglePattern(AbstractPattern):
     def name(self) -> str:
         return "triangle"
 
+    @property
+    def overridable(self) -> List[str]:
+        return ["fill", "stroke"]
+
     def draw(self, count: int, type: Type, radius: Optional[int] = None) -> List[Shape]:
             edge = 3
             shapes = []
@@ -47,7 +51,7 @@ class TrianglePattern(AbstractPattern):
                         b = 2*la*(lb-ya)-2*xa
                         c = xa**2+(lb-ya)**2-r2
                         
-                        xcs = quadratic_equation.solve(a, b, c)
+                        xcs = quadratic_equation(a, b, c)
 
                         x = xcs[self.rm.next(0, 1)]
 
@@ -68,11 +72,11 @@ class TrianglePattern(AbstractPattern):
                         a = 1
                         b = (-2)*yo
                         c = (xa-xo)**2+(yo**2)-ro2
-                        yas = quadratic_equation.solve(a, b, c)
+                        yas = quadratic_equation(a, b, c)
                         ya = yas[self.rm.next(0, len(yas)-1)]
                         ra2 = (ro**2)*3
 
-                        [(xb, yb), (xc, yc)] = circles_intersection.solve((xo, yo, ro2), (xa, ya, ra2))
+                        [(xb, yb), (xc, yc)] = circles_intersection((xo, yo, ro2), (xa, ya, ra2))
 
                         xa = round(xa, 2)
                         ya = round(ya, 2)

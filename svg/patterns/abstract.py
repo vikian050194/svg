@@ -18,6 +18,10 @@ class AbstractPattern(abc.ABC):
     def name(self) -> str:
         raise NotImplementedError()
 
+    @abc.abstractproperty
+    def overridable(self) -> List[str]:
+        raise NotImplementedError()
+
     @abc.abstractmethod
     def draw(self) -> List[Shape]:
         raise NotImplementedError()

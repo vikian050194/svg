@@ -11,15 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     env:
       OS: ubuntu-latest
-      PYTHON: '3.9'
+      PYTHON: "3.9"
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Setup Python
-      uses: actions/setup-python@master
-      with:
-        python-version: 3.9
+      - name: Setup Python
+        uses: actions/setup-python@master
+        with:
+          python-version: 3.9
 
-    - name: Run Tests
-      run: python3 -m unittest
+      - name: Install Requirements
+        run: pip3 install -r requirements/dev.txt
+
+      - name: Run Tests
+        run: python3 -m unittest

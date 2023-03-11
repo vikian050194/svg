@@ -41,6 +41,15 @@ Developed and tested on Ubuntu 20.04
     python3 svg config.yaml
     ```
 
+## Development
+
+```
+virtualenv venv
+source venv/bin/activate
+pip install -e .
+pip install -r reqirements/dev.txt
+```
+
 ## Usage
 
 **svg** needs yaml configuration file as a single argument.
@@ -95,11 +104,31 @@ python3 -m unittest discover -t=. -s=tests/ -p=test_*.py
 
 ### Coverage
 
-To make HTML coverage report run following commands
+Preparation
 
 ```
-pip install -r reqirements/tests.txt
+virtualenv venv
+source venv/bin/activate
+pip install -r reqirements/docs.txt
+```
+
+Generate coverage results
+```
 coverage run -m unittest
+```
+
+To get total coverage percent
+```
+coverage report --format=total
+```
+
+To make text report
+```
+coverage report --format=text
+```
+
+To make HTML coverage report run following commands
+```
 coverage html
 ```
 

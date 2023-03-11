@@ -2,7 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Generate",
+            "name": "Python: Generate (dev)",
             "type": "python",
             "request": "launch",
             "program": "svg/app.py",
@@ -13,6 +13,19 @@
             ],
             "env": {
                 "SVG_HOME": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Python: Generate (local)",
+            "type": "python",
+            "request": "launch",
+            "program": "svg/app.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "${relativeFile}"
+            ],
+            "env": {
             }
         },
         {

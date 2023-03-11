@@ -26,7 +26,9 @@ colors = {
     "linkedine": LinkedInE,
 
     "experiment1": Experiment1,
-    "experiment2": Experiment2
+    "experiment2": Experiment2,
+
+    "test": Test
 }
 
 

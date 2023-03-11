@@ -1,8 +1,7 @@
 from unittest import TestCase
 
 from svg.colors import Base
-from svg.palette import Order
-from svg import Palette
+from svg.palette import Order, Palette
 
 
 class TestColors(Base):
@@ -13,7 +12,7 @@ class TestColors(Base):
 
 class TestPalette(TestCase):
     def test_get_color_forward(self):
-        palette = Palette(TestColors, Order.FORWARD)
+        palette = Palette(TestColors, Order.FORWARD, None)
 
         self.assertEqual(palette.get_color(), "color_a")
         self.assertEqual(palette.get_color(), "color_b")

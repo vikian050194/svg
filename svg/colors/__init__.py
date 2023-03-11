@@ -11,3 +11,5 @@ from .polaroid import *
 from .youtube import *
 
 from .experiment import * 
+
+from .test import *

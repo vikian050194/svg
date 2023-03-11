@@ -5,11 +5,17 @@ from os import path, environ
 from pathlib import Path
 
 
-from svg import main
+from svg.main import main
 from svg.configuration import Configuration
 
 
 def run():
+    args = argv[1:]
+
+    if len(args) != 1:
+        print("ERROR: config file is not provided")
+        return
+
     home = environ.get("SVG_HOME", None)
 
     if not home:

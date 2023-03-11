@@ -9,6 +9,10 @@ class GraphPattern(AbstractPattern):
     def name(self) -> str:
         return "graph"
 
+    @property
+    def overridable(self) -> List[str]:
+        return ["fill", "stroke"]
+
     def draw(self, n: int) -> List[Shape]:
         circles = []
         lines = []

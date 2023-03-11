@@ -9,6 +9,10 @@ class CirclePattern(AbstractPattern):
     def name(self) -> str:
         return "circle"
 
+    @property
+    def overridable(self) -> List[str]:
+        return ["fill", "stroke"]
+
     def draw(self, count: int, radius: int) -> List[Shape]:
         shapes = []
         

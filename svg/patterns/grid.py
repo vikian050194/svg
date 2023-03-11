@@ -9,6 +9,10 @@ class GridPattern(AbstractPattern):
     def name(self) -> str:
         return "grid"
 
+    @property
+    def overridable(self) -> List[str]:
+        return ["stroke"]
+
     def draw(self, count: int) -> List[Shape]:
         shapes = []
 

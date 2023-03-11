@@ -1,8 +1,8 @@
 name: wallpaper
 width: 1920
 height: 1080
-palette: linkedine
-order: random
+palette: green
+order: forward
 patterns:
   - name: background
     color: white
@@ -21,3 +21,4 @@ patterns:
     type: equilateral
     count: 64
     radius: 16
+    fill: white

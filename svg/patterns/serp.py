@@ -9,6 +9,10 @@ class SerpPattern(AbstractPattern):
     def name(self) -> str:
         return "serp"
 
+    @property
+    def overridable(self) -> List[str]:
+        return ["fill", "stroke"]
+
     def draw(self, count: int) -> List[Shape]:
             shapes = []
 
