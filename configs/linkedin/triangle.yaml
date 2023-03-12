@@ -1,7 +1,8 @@
 name: linkedin-triangle
 width: 1584
 height: 396
-palette: blue
+palettes:
+  - blue
 order: forward
 patterns:
   - name: background

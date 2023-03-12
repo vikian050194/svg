@@ -2,11 +2,11 @@ from typing import List
 
 
 class Configuration():
-    def __init__(self, home: str, width: int, height: int, palette: str, order: str, patterns: List, print_result: bool = False, write_results: bool = True):
+    def __init__(self, home: str, width: int, height: int, palettes: List[str], order: str, patterns: List, print_result: bool = False, write_results: bool = True):
         self._home = home
         self._width = width
         self._height = height
-        self._palette = palette
+        self._palettes = palettes
         self._order = order
         self._patterns = patterns
         self._print = print_result
@@ -29,8 +29,8 @@ class Configuration():
         return self._height
 
     @property
-    def palette(self) -> str:
-        return self._palette
+    def palettes(self) -> List[str]:
+        return self._palettes
 
     @property
     def order(self) -> str:

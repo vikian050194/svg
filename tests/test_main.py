@@ -13,7 +13,7 @@ class TestMain(TestCase):
         home=self.temp_dir.name
         width=1000
         height=1000
-        palette="test"
+        palettes=["test"]
         order="forward"
         patterns=[
             {
@@ -27,7 +27,7 @@ class TestMain(TestCase):
         ]
         print_result=True
         write_results=True
-        self.call = lambda home=home, width=width, height=height, palette=palette, order=order, patterns=patterns, print_result=print_result, write_results=write_results: main(config=Configuration(home, width, height, palette, order, patterns, print_result, write_results))
+        self.call = lambda home=home, width=width, height=height, palettes=palettes, order=order, patterns=patterns, print_result=print_result, write_results=write_results: main(config=Configuration(home, width, height, palettes, order, patterns, print_result, write_results))
 
     def tearDown(self):
         self.temp_dir.cleanup()

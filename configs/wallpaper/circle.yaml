@@ -1,7 +1,8 @@
 name: wallpaper
 width: 1920
 height: 1080
-palette: linkedine
+palettes:
+  - linkedine
 order: random
 patterns:
   - name: background

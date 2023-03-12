@@ -42,11 +42,11 @@ def run():
 
     width = config_source.get("width", default_config_source.get("width"))
     height = config_source.get("height", default_config_source.get("height"))
-    palette = config_source.get("palette", default_config_source.get("palette"))
+    palettes = config_source.get("palettes", default_config_source.get("palettes"))
     order = config_source.get("order", default_config_source.get("order"))
     patterns = config_source.get("patterns", default_config_source.get("patterns"))
 
-    config = Configuration(home, width, height, palette, order, patterns)
+    config = Configuration(home, width, height, palettes, order, patterns)
 
     main(config)
 

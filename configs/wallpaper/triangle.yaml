@@ -1,7 +1,16 @@
 name: wallpaper
 width: 1920
 height: 1080
-palette: green
+palettes:
+  - blue
+  - violet
+  - red
+  - orange
+  - cyan
+  - yellow
+  - pink
+  - green
+  - gray
 order: forward
 patterns:
   - name: background

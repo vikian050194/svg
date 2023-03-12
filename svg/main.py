@@ -14,7 +14,8 @@ def main(config: Configuration):
     rm = RandomManager(randint, config.width, config.height)
     tm = TimeManager()
 
-    palette_colors = get_colors(config.palette)
+    palette_name = config.palettes[rm.next(0, len(config.palettes)-1)]
+    palette_colors = get_colors(palette_name)
     palette = Palette(palette_colors, config.order, rm)
 
     patterns = [
