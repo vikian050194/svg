@@ -25,7 +25,7 @@ def readme():
 
 attrs = dict(
     name="svg",
-    version="0.8.0",
+    version="0.9.0",
     description="SVG",
     long_description=readme(),
     classifiers=[

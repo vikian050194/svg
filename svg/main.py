@@ -23,6 +23,7 @@ def main(config: Configuration):
         GridPattern,
         CirclePattern,
         TrianglePattern,
+        TextPattern,
         GraphPattern,
         SerpPattern,
     ]

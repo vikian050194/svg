@@ -3,6 +3,14 @@ width: 1920
 height: 1080
 palettes:
   - linkedine
+  - dell
+  - docker
+  - google
+  - gravit
+  - ikea
+  - microsoft
+  - polaroid
+  - youtube
 order: random
 patterns:
   - name: background

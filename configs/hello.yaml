@@ -1,0 +1,13 @@
+name: helloworld
+width: 1920
+height: 1080
+palettes:
+  - linkedine
+order: mono
+patterns:
+  - name: background
+    color: white
+
+  - name: text
+    size: 64
+    value: "Hello, World!"
