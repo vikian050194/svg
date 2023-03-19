@@ -2,29 +2,26 @@ name: wallpaper
 width: 1920
 height: 1080
 palettes:
-  - linkedine
-  - dell
-  - docker
-  - google
-  - gravit
-  - ikea
-  - microsoft
-  - polaroid
-  - youtube
-order: random
+  - blue
+  - violet
+  - red
+  - orange
+  - cyan
+  - yellow
+  - pink
+  - green
+  - gray
+order: forward
 patterns:
   - name: background
-    color: white
 
   - name: circle
     count: 16
     radius: 64
-    fill: white
 
   - name: circle
     count: 32
     radius: 32
-    fill: white
 
   - name: circle
     count: 64

@@ -6,7 +6,7 @@ palettes:
 order: mono
 patterns:
   - name: background
-    color: bisque
+    fill: bisque
 
   - name: circle
     count: 8

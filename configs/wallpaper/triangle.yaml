@@ -14,7 +14,6 @@ palettes:
 order: forward
 patterns:
   - name: background
-    color: white
 
   - name: triangle
     type: equilateral

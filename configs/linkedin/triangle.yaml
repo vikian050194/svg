@@ -6,7 +6,7 @@ palettes:
 order: forward
 patterns:
   - name: background
-    color: white
+    fill: white
 
   - name: triangle
     type: equilateral

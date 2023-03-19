@@ -11,13 +11,15 @@ class BackgroundPattern(AbstractPattern):
 
     @property
     def overridable(self) -> List[str]:
-        return []
+        return ["fill"]
 
-    def draw(self, color: str) -> List[Shape]:
+    def draw(self) -> List[Shape]:
         shapes = []
         
+        fill = self.palette.get_color()
+
         background = Rectangle(0, 0, "100%", "100%")
-        background.fill = color
+        background.fill = fill
         shapes.append(background)
 
         return shapes

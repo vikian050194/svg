@@ -18,7 +18,7 @@ class TestMain(TestCase):
         patterns=[
             {
                 "name": "background",
-                "color": "white"
+                "fill": "white"
             },
             {
                 "name": "grid",
@@ -52,7 +52,8 @@ class TestMain(TestCase):
         self.assertIn("line", value)
         self.assertIn("black", value)
         self.assertIn("white", value)
-        self.assertIn("red", value)
+        self.assertIn("green", value)
+        self.assertNotIn("red", value)
         mock_print.reset_mock()
 
     def test_custom_fill_and_stroke(self, mock_print):
