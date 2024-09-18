@@ -8,6 +8,8 @@
 
 **svg** is a python module and CLI application that will generate SVG based on yaml configuration file.
 
+Also there is [todo list](./TODO.md).
+
 ## Motivation
 
 Once I found nice image for wallpaper with graph. In fact two graphs or even four. Because one is pink and one is blue.
