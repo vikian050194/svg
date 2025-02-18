@@ -1,11 +1,6 @@
-import abc
 from datetime import datetime
 
-
-class AbstractTimeManager(abc.ABC):
-    @abc.abstractmethod
-    def get_datetime(self) -> datetime:
-        raise NotImplementedError()
+from .abstract_time_manager import AbstractTimeManager
 
 
 class TimeManager(AbstractTimeManager):

@@ -3,7 +3,7 @@
     "configurations": [
         {
             "name": "Python: Generate (dev)",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "svg/app.py",
             "console": "integratedTerminal",
@@ -17,7 +17,7 @@
         },
         {
             "name": "Python: Generate (local)",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "svg/app.py",
             "console": "integratedTerminal",
@@ -29,8 +29,8 @@
             }
         },
         {
-            "name": "Python: Module",
-            "type": "python",
+            "name": "Python: Tests (file)",
+            "type": "debugpy",
             "request": "launch",
             "module": "unittest",
             "args": [
@@ -39,14 +39,14 @@
         },
         {
             "name": "Python: Current File",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
         },
         {
             "name": "Python: Run App",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "svg/app.py",
             "console": "integratedTerminal",

@@ -26,6 +26,7 @@ def main(config: Configuration):
         TextPattern,
         GraphPattern,
         SerpPattern,
+        FilePattern,
     ]
 
     pp = {}

@@ -41,7 +41,7 @@ Empty
 ## Old
 
 - [x] config file
-- [ ] repear pattern
+- [ ] repeat pattern
 - [ ] fill `color` for pattern
 - [ ] stroke `color` for pattern
 - [ ] palette for pattern

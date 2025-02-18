@@ -1,5 +1,4 @@
 from .node import Node
-from .rectangle import Rectangle
 
 
 class SVG(Node):
@@ -21,7 +20,7 @@ class SVG(Node):
             f'width="{self.width}" '
             f'height="{self.height}" '
             f'viewBox="0 0 {self.width} {self.height}"> '
-            f'{"".join(map(str,self.shapes))}'
+            f'{"".join(map(str, self.shapes))}'
             f'</{self.name}>'
         )
 

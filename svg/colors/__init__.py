@@ -9,6 +9,7 @@ from .linkedin import *
 from .microsoft import *
 from .polaroid import *
 from .youtube import *
+from .semrush import *
 
 from .experiment import * 
 

@@ -3,10 +3,10 @@ width: 1920
 height: 1080
 palettes:
   - linkedine
-order: mono
+order: random
 patterns:
   - name: background
-    color: white
+    fill: white
 
   - name: text
     size: 64

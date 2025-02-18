@@ -25,6 +25,8 @@ colors = {
 
     "linkedine": LinkedInE,
 
+    "semrush": Semrush,
+
     "experiment1": Experiment1,
     "experiment2": Experiment2,
 

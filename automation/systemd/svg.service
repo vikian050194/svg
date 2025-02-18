@@ -4,7 +4,7 @@ Description=Update wallpaper
 [Service]
 User=kirill
 Type=simple
-ExecStart=/usr/bin/python3 -m svg configs/wallpaper/circle.yaml
+ExecStart=/usr/bin/python3 -m svg configs/current.yaml
 
 [Install]
 WantedBy=multi-user.target
