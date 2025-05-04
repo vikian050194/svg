@@ -2,6 +2,8 @@ from unittest import TestCase
 from unittest.mock import patch
 from tempfile import TemporaryDirectory
 
+import os
+
 from svg.main import main
 from svg.configuration import Configuration
 
@@ -10,6 +12,8 @@ from svg.configuration import Configuration
 class TestMain(TestCase):
     def setUp(self):
         self.temp_dir = TemporaryDirectory()
+        # TODO fix history dir hack
+        os.makedirs(self.temp_dir.name + "/history")
         home=self.temp_dir.name
         width=1000
         height=1000

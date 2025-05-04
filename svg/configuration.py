@@ -1,6 +1,7 @@
 from typing import List
 
 
+# TODO use dataclass
 class Configuration():
     def __init__(self, home: str, width: int, height: int, palettes: List[str], order: str, patterns: List, print_result: bool = False, write_results: bool = True):
         self._home = home
